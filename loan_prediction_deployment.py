@@ -19,6 +19,7 @@ st.title("Loan Approval Prediction")
 
 st.write("Enter applicant details to predict loan approval")
 
+Loan_ID = st.number_input("Loan ID", min_value=0)
 Gender = st.selectbox("Gender", ["Male","Female"])
 Married = st.selectbox("Married", ["Yes","No"])
 Dependents = st.selectbox("Dependents", ["0","1","2","3+"])
@@ -34,6 +35,7 @@ Property_Area = st.selectbox("Property Area", ["Urban","Semiurban","Rural"])
 
 # convert input to dataframe
 df = pd.DataFrame({
+    "Loan_ID":[Loan_ID],
     "Gender":[Gender],
     "Married":[Married],
     "Dependents":[Dependents],
@@ -56,7 +58,7 @@ if st.button("Predict Loan Status"):
 
     prediction = model.predict(df)
 
-    if prediction[0] >= 0.5:
-        st.success("Loan Approved")
-    else:
-        st.error("Loan Not Approved")
+   if prediction[0] == 1:
+    st.success("Loan Approved")
+else:
+    st.error("Loan Not Approved")
