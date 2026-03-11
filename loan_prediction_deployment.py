@@ -60,16 +60,16 @@ if st.button("Predict Loan Status"):
         if col in df.columns and col != "Loan_ID":
             df[col] = encoder[col].transform(df[col])
 
-    # Debug: show what the model receives
     st.write("Input sent to model:")
     st.write(df)
 
     prediction = model.predict(df)
 
-    # Debug: show prediction value
-    st.write("Prediction value:", prediction)
+    prob = prediction[0]
 
-    if prediction[0] == 1:
+    st.write("Approval probability:", round(prob,2))
+
+    if prob >= 0.5:
         st.success("Loan Approved")
     else:
         st.error("Loan Not Approved")
