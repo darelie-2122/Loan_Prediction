@@ -12,8 +12,8 @@ import pandas as pd
 import joblib
 
 # load model
-model = joblib.load("loan_prediction_lr_model.pkl")
-encoder = joblib.load("label_encoder_Loan_prediction.pk1")
+model = joblib.load("Loan_prediction_rfr_model.pkl")
+encoder = joblib.load("label_encoder_Loan.pkl")
 
 st.title("Loan Approval Prediction")
 
