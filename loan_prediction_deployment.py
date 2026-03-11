@@ -31,8 +31,7 @@ loan_term = st.number_input("Loan Amount Term (months)", min_value=0)
 credit_history = st.selectbox("Credit History", [0, 1])
 property_area = st.selectbox("Property Area",encoder["Property_Area"].classes_)
 
-df = pd.DataFrame({
-    "Loan_ID": [loan_id],
+df = pd.df = pd.DataFrame({
     "Gender": [gender],
     "Married": [married],
     "Dependents": [dependents],
