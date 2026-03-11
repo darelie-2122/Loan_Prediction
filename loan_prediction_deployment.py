@@ -50,7 +50,6 @@ df = pd.DataFrame({
 })
 
 if st.button("Predict Loan Status"):
-if st.button("Predict Loan Status"):
 
     for col in encoder:
         if col in df.columns:
