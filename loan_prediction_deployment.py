@@ -20,17 +20,22 @@ st.title("Loan Approval Prediction")
 st.write("Enter applicant details to predict loan approval")
 
 Loan_ID = st.number_input("Loan ID", min_value=0)
-Gender = st.selectbox("Gender", ["Male","Female"])
-Married = st.selectbox("Married", ["Yes","No"])
-Dependents = st.selectbox("Dependents", ["0","1","2","3+"])
-Education = st.selectbox("Education", ["Graduate","Not Graduate"])
-Self_Employed = st.selectbox("Self Employed", ["Yes","No"])
+
+Gender = st.selectbox("Gender", encoder["Gender"].classes_)
+Married = st.selectbox("Married", encoder["Married"].classes_)
+Dependents = st.selectbox("Dependents", encoder["Dependents"].classes_)
+Education = st.selectbox("Education", encoder["Education"].classes_)
+Self_Employed = st.selectbox("Self Employed", encoder["Self_Employed"].classes_)
+
 ApplicantIncome = st.number_input("Applicant Income", min_value=1000)
-CoapplicantIncome = st.number_input("Coapplicant Income",0)
+CoapplicantIncome = st.number_input("Coapplicant Income", min_value=0)
+
 LoanAmount = st.number_input("Loan Amount", min_value=50)
 Loan_Amount_Term = st.number_input("Loan Amount Term", min_value=12)
-Credit_History = st.selectbox("Credit History", [0,1])
-Property_Area = st.selectbox("Property Area", ["Urban","Semiurban","Rural"])
+
+Credit_History = st.selectbox("Credit History", encoder["Credit_History"].classes_)
+
+Property_Area = st.selectbox("Property Area", encoder["Property_Area"].classes_)
 
 
 # convert input to dataframe
