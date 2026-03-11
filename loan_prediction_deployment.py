@@ -50,6 +50,7 @@ df = pd.DataFrame({
 })
 
 if st.button("Predict Loan Status"):
+if st.button("Predict Loan Status"):
 
     for col in encoder:
         if col in df.columns:
@@ -60,4 +61,4 @@ if st.button("Predict Loan Status"):
     if prediction[0] == 1:
         st.success("Loan Approved")
     else:
-        st.error("Loan Not Approved")error("Loan Not Approved")
+        st.error("Loan Not Approved")
