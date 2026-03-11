@@ -49,7 +49,6 @@ df = pd.DataFrame({
     "Property_Area":[Property_Area]
 })
 
-
 if st.button("Predict Loan Status"):
 
     for col in encoder:
@@ -58,7 +57,7 @@ if st.button("Predict Loan Status"):
 
     prediction = model.predict(df)
 
-   if prediction[0] == 1:
-    st.success("Loan Approved")
-else:
-    st.error("Loan Not Approved")
+    if prediction[0] == 1:
+        st.success("Loan Approved")
+    else:
+        st.error("Loan Not Approved")error("Loan Not Approved")
